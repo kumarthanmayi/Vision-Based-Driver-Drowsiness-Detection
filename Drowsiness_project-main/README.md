@@ -136,7 +136,7 @@ The demonstration video below showcases the complete deployment and real-time ex
 
 **Demo:**
 
-
+https://github.com/user-attachments/assets/46bbc914-c244-420a-952c-45322cff0f44
 
 ---
 
