@@ -2,6 +2,8 @@
 
 ### Real-Time Monitoring using Transfer Learning and Edge-Optimized Inference
 
+---
+
 ## 🔍 Motivation & Core Idea
 
 Driver drowsiness and distraction are among the leading causes of road accidents, particularly during long-duration and night-time driving. Many existing solutions rely on intrusive sensors or expensive hardware, limiting their practicality for large-scale deployment.
@@ -34,21 +36,31 @@ This project emphasizes practical deployment, real-time performance, and efficie
 
 ---
 
+## 🏗️ System Workflow
+
+<p align="center">
+  <img src="Assets/workflow.png" alt="System Workflow" width="900">
+</p>
+
+The system follows a complete pipeline from data collection and preprocessing to model training, TensorFlow Lite optimization, Raspberry Pi deployment, and real-time driver monitoring. Facial landmarks are extracted using MediaPipe, Eye Aspect Ratio (EAR) and Mouth Aspect Ratio (MAR) are computed, and the CNN model classifies the driver's state before generating visual and audio alerts.
+
+---
+
 ## 🧠 Model & Technical Approach
 
 **Model Backbone:** MobileNetV2 (Pretrained on ImageNet)
 
-**Learning Strategy:** Transfer Learning
+### Learning Strategy
 
 - Utilizes pretrained feature extraction for edges, textures, and facial patterns.
 - Reduces training time and improves generalization on limited data.
 
-**Optimization**
+### Optimization
 
 - Trained Keras model converted to TensorFlow Lite (TFLite).
 - Designed for low-latency inference on edge devices.
 
-**Decision Logic**
+### Decision Logic
 
 - CNN-based classification combined with EAR and MAR thresholds for robust driver-state detection.
 
@@ -79,6 +91,11 @@ This project emphasizes practical deployment, real-time performance, and efficie
 
 ### 1️⃣ Clone the repository
 
+```bash
+git clone https://github.com/kumarthanmayi/Vision-Based-Driver-Drowsiness-Detection.git
+cd Vision-Based-Driver-Drowsiness-Detection
+```
+
 ### 2️⃣ Install dependencies
 
 ```bash
@@ -93,7 +110,37 @@ python fusion_code.py
 
 The system will activate the webcam and display the driver's current state in real time.
 
-> **Note:** The project can be executed on a laptop using a webcam for development and testing. The edge deployment demonstrated in this repository was implemented on a Raspberry Pi using TensorFlow Lite.
+> **Note:** The project can be executed directly on a laptop using a webcam for development and testing. For Raspberry Pi deployment, connect the required hardware, install the dependencies on the Raspberry Pi, copy the project files, and then execute the same detection script using the TensorFlow Lite model.
+
+---
+
+## 📸 Project Results
+
+### ✅ Active Driver Detection
+
+<p align="center">
+  <img src="Assets/Active.png" alt="Active Driver Detection" width="700">
+</p>
+
+---
+
+### 😴 Drowsiness Detection
+
+<p align="center">
+  <img src="Assets/Drowsiness.png" alt="Drowsiness Detection" width="700">
+</p>
+
+<p align="center">
+  <img src="Assets/Drowsiness 2.png" alt="Drowsiness Detection 2" width="700">
+</p>
+
+---
+
+### ⚠️ Distraction Detection
+
+<p align="center">
+  <img src="Assets/Distracted.png" alt="Distraction Detection" width="700">
+</p>
 
 ---
 
@@ -126,16 +173,17 @@ Press **Q** in the OpenCV display window.
 
 ## 🎥 Demonstration
 
-### Laptop
+### 💻 Laptop
 
 Live webcam-based real-time detection for development and testing.
 
-### Raspberry Pi
+### 🍓 Raspberry Pi
 
-The demonstration video below showcases the complete deployment and real-time execution of the system on a Raspberry Pi using TensorFlow Lite.
+The demonstration video showcases the complete deployment and real-time execution of the system on a Raspberry Pi using TensorFlow Lite.
 
-**Demo:**
+**Demo Video:**
 
+https://github.com/user-attachments/assets/245a31f6-9afe-4316-8eaa-1801b2dfd7b1
 
 
 ---
